@@ -1,0 +1,18 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: simple-webhook
+webhooks:
+  - name: simple-webhook.default.svc
+    clientConfig:
+    # 替换 <base64-encoded tls.crt> 为之前生成的证书的 Base64 编码字符串。
+      caBundle: <base64-encoded tls.crt>
+      service:
+        name: simple-webhook
+        namespace: default
+        path: "/validate"
+    rules:
+      - operations: ["CREATE", "UPDATE"]
+        apiGroups: [""]
+        apiVersions: ["v1"]
+        resources: ["pods"]

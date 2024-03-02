@@ -30,3 +30,21 @@ rules:
   - get
   - patch
   - update
+- apiGroups:
+  - demogroup.tutorial.kubebuilder.io
+  resources:
+  - jobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - demogroup.tutorial.kubebuilder.io
+  resources:
+  - jobs/status
+  verbs:
+  - get

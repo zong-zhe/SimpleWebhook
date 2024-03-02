@@ -1,27 +1,27 @@
-# permissions for end users to view demoes.
+# permissions for end users to view cronjobs.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
     app.kubernetes.io/name: clusterrole
-    app.kubernetes.io/instance: demo-viewer-role
+    app.kubernetes.io/instance: cronjob-viewer-role
     app.kubernetes.io/component: rbac
     app.kubernetes.io/created-by: kubebuiler-demo
     app.kubernetes.io/part-of: kubebuiler-demo
     app.kubernetes.io/managed-by: kustomize
-  name: demo-viewer-role
+  name: cronjob-viewer-role
 rules:
 - apiGroups:
-  - demogroup.tutorial.kubebuilder.io
+  - batch.tutorial.kubebuilder.io
   resources:
-  - demoes
+  - cronjobs
   verbs:
   - get
   - list
   - watch
 - apiGroups:
-  - demogroup.tutorial.kubebuilder.io
+  - batch.tutorial.kubebuilder.io
   resources:
-  - demoes/status
+  - cronjobs/status
   verbs:
   - get

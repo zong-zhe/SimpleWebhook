@@ -1,0 +1,12 @@
+apiVersion: demogroup.tutorial.kubebuilder.io/v1alpha
+kind: Demo
+metadata:
+  labels:
+    app.kubernetes.io/name: demo
+    app.kubernetes.io/instance: demo-sample
+    app.kubernetes.io/part-of: kubebuiler-demo
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: kubebuiler-demo
+  name: demo-sample
+spec:
+  # TODO(user): Add fields here
